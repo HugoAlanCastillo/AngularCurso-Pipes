@@ -1,0 +1,114 @@
+<div class="container my-3">
+  <h2>Pipes Demo App</h2>
+  <hr>
+
+  <table class="table table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe code</th>
+        <th scope="col">Resultado</th>
+      </tr>
+    </thead>
+    <tbody>
+
+<tr>
+  <td>{{ name }}</td>
+  <td> uppercase </td>
+  <td> {{ name | uppercase }} </td>
+</tr>
+
+<tr>
+  <td>{{ name }}</td>
+  <td> lowercase </td>
+  <td> {{ name | lowercase }} </td>
+</tr>
+
+
+<tr>
+  <td>{{ name }}</td>
+  <td> slice:0:1 </td>
+  <td>{{ name | slice:0:1 }}</td>
+</tr>
+
+<tr>
+  <td>{{ myArray }}</td>
+  <td> slice:0:5 </td>
+  <td> {{ myArray | slice:0:5 }} </td>
+</tr>
+
+
+<tr>
+  <td>{{ myArray }}</td>
+  <td> *ngFor= let number of myArray | slice:0:4 </td>
+  <ul> 
+    <li  *ngFor = "let number of myArray | slice:0:4">  {{ number }}</li> 
+  </ul>
+</tr>
+
+
+<tr>
+  <td>  {{ PI }} </td>
+  <td> number </td>
+  <td> {{ PI | number }} </td>
+</tr>
+
+<tr>
+  <td> {{ PI }} </td>
+  <td> number: '1.0-5' </td>
+  <td> {{ PI | number: '1.0-5' }} </td>
+</tr>
+
+<tr>
+  <td> {{ myNum }} </td>
+  <td> percent</td>
+  <td> {{ myNum | percent }} </td>
+</tr>
+
+<tr>
+  <td> {{ myNum }} </td>
+  <td> percent: '2.2-2' </td>
+  <td> {{ myNum | percent: '2.2-2' }} </td>
+</tr>
+
+<tr>
+  <td> {{ salary }} </td>
+  <td> currency </td>
+  <td> {{ salary | currency: 'USD' }} </td>
+</tr>
+
+
+<tr>
+  <td> {{ ing }} </td>
+  <td> json </td>
+  <td> <pre> {{ ing | json }} </pre> </td>
+</tr>
+
+<tr>
+  <td> {{ myDate }} </td>
+  <td> date </td>
+  <td> {{ myDate | date }} </td>
+</tr>
+
+
+<tr>
+  <td>YouTube: "{{ video }}"</td>
+  <td> video </td>
+  <td> 
+    <iframe 
+    width="560" 
+    height="315" 
+    [src]="video | safeDOM:'https://www.youtube.com/embed/'" 
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
+  </td>
+</tr>
+
+
+
+
+
+    </tbody>
+  </table>
+</div>
